@@ -1,13 +1,11 @@
 package com.nosort.uberslideup
 
 import android.os.Bundle
-import android.support.constraint.motion.MotionLayout
-import android.support.v4.app.Fragment
+import androidx.constraintlayout.motion.widget.MotionLayout
+import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.bottom_fragment.*
 
 class BottomFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? =
@@ -19,10 +17,12 @@ class BottomFragment : Fragment() {
     }
 
     private fun setMotionLayoutListener() {
-        bottomMotionlayout.setTransitionListener(object : MotionLayout.TransitionListener {
+        requireView().findViewById<MotionLayout>(R.id.bottomMotionlayout).setTransitionListener(object : MotionLayout.TransitionListener {
+            override fun onTransitionStarted(p0: MotionLayout?, p1: Int, p2: Int) {}
+            override fun onTransitionTrigger(p0: MotionLayout?, p1: Int, p2: Boolean, p3: Float) {}
             override fun onTransitionChange(p0: MotionLayout?, p1: Int, p2: Int, progress: Float) {
                 val mainActivity = activity as MainActivity
-                mainActivity.mainMotionLayout.progress = Math.abs(progress)
+                mainActivity.findViewById<MotionLayout>(R.id.mainMotionLayout).progress = Math.abs(progress)
             }
 
             override fun onTransitionCompleted(p0: MotionLayout?, p1: Int) {

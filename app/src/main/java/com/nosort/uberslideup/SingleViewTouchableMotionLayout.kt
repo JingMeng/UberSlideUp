@@ -2,7 +2,7 @@ package com.nosort.uberslideup
 
 import android.content.Context
 import android.graphics.Rect
-import android.support.constraint.motion.MotionLayout
+import androidx.constraintlayout.motion.widget.MotionLayout
 import android.util.AttributeSet
 import android.view.MotionEvent
 import android.view.View
@@ -19,6 +19,8 @@ class SingleViewTouchableMotionLayout(context: Context, attributeSet: AttributeS
     init {
 
         setTransitionListener(object : MotionLayout.TransitionListener {
+            override fun onTransitionStarted(p0: MotionLayout?, p1: Int, p2: Int) {}
+            override fun onTransitionTrigger(p0: MotionLayout?, p1: Int, p2: Boolean, p3: Float) {}
             override fun onTransitionChange(p0: MotionLayout?, p1: Int, p2: Int, p3: Float) {
             }
 

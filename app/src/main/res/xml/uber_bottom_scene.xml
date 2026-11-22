@@ -5,7 +5,7 @@
         app:constraintSetEnd="@id/uber_slideup_end"
         app:constraintSetStart="@id/uber_slideup_start"
         app:duration="300"
-        app:interpolator="easeIn">
+        app:motionInterpolator="easeIn">
         <OnSwipe
             app:dragDirection="dragUp"
             app:maxAcceleration="200"
@@ -16,42 +16,42 @@
             <KeyAttribute
                 android:alpha="0"
                 app:framePosition="45"
-                app:target="@id/tittleTV" />
+                app:motionTarget="@id/tittleTV" />
 
             <KeyAttribute
                 android:alpha="1"
                 app:framePosition="60"
-                app:target="@id/tittleTV" />
+                app:motionTarget="@id/tittleTV" />
             <KeyAttribute
                 android:alpha="0"
                 app:framePosition="45"
-                app:target="@id/backArrow" />
+                app:motionTarget="@id/backArrow" />
             <KeyAttribute
                 android:alpha="1"
                 app:framePosition="60"
-                app:target="@id/backArrow" />
+                app:motionTarget="@id/backArrow" />
             <KeyAttribute
                 android:scaleX="1"
                 android:scaleY="1"
                 app:framePosition="80"
-                app:target="@id/content" />
+                app:motionTarget="@id/content" />
             <KeyPosition
                 app:framePosition="85"
                 app:keyPositionType="pathRelative"
                 app:percentX="0"
                 app:percentY="0"
-                app:target="@id/tittleTV" />
+                app:motionTarget="@id/tittleTV" />
 
             <KeyAttribute
                 app:framePosition="60"
-                app:target="@id/blackBackgroundView">
+                app:motionTarget="@id/blackBackgroundView">
                 <CustomAttribute
                     app:attributeName="backgroundColor"
                     app:customColorValue="@android:color/black" />
             </KeyAttribute>
             <KeyAttribute
                 app:framePosition="10"
-                app:target="@id/blackBackgroundView">
+                app:motionTarget="@id/blackBackgroundView">
                 <CustomAttribute
                     app:attributeName="backgroundColor"
                     app:customColorValue="@android:color/transparent" />
